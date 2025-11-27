@@ -1,0 +1,41 @@
+LINUX cmd setup
+1. Open your terminal and run:
+git clone https://github.com/parth1781/lb6.git
+cd lb6s
+2. Log in to MySQL and create the empty database.
+mysql -u root -p
+Here is the exact set of commands your friend needs to run on their Linux Terminal.
+
+Since your repository URL (from your logs) is https://github.com/parth1781/lb6.git, I have used that below.
+
+Send this entire block to your friend:
+
+📌 Project Setup Guide (Linux)
+Prerequisites: Ensure you have Java 17+, Node.js, and MySQL installed.
+
+Step 1: Clone the Project
+Open your terminal and run:
+git clone https://github.com/parth1781/lb6.git
+cd lb6
+
+Step 2: Setup Database
+Log in to MySQL and create the empty database.
+mysql -u root -p
+(Type password, then run):
+CREATE DATABASE vit_results;
+EXIT;
+
+Step 3: Setup Backend (Inside VS Code)
+In the file explorer on the left, go to: result/src/main/resources/application.properties
+Edit the password to match their local system password. Save the file.
+In the terminal, run these commands:
+cd result
+chmod +x mvnw    # Important for Linux: Gives permission to run
+./mvnw spring-boot:run
+
+Step 4: Setup Frontend (Inside VS Code)
+Click the + icon in the terminal panel to open a Second Terminal.
+Run:
+cd frontend
+npm install
+npm start
