@@ -1,0 +1,128 @@
+/* body { background: #f3f4f6; font-family: sans-serif; display: flex; justify-content: center; padding: 20px; }
+.card { background: white; padding: 30px; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.1); width: 600px; text-align: center; }
+input { padding: 10px; margin: 5px; border: 1px solid #ddd; border-radius: 4px; width: 60%; }
+button { padding: 10px 20px; background: black; color: white; border: none; border-radius: 4px; cursor: pointer; margin: 5px; }
+table { width: 100%; border-collapse: collapse; margin-top: 20px; }
+td, th { padding: 10px; border-bottom: 1px solid #eee; }
+.badge { background: #000; color: #fff; padding: 4px 8px; border-radius: 4px; font-size: 0.8rem; } */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-400: #9ca3af;
+  --gray-600: #4b5563;
+  --gray-700: #374151;
+  --gray-800: #1f2937;
+  --gray-900: #111827;
+}
+
+body {
+  background: linear-gradient(135deg, var(--gray-100), var(--gray-200));
+  color: var(--gray-900);
+  font-family: 'Inter', sans-serif;
+  min-height: 100vh;
+  margin: 0;
+}
+
+/* --- HEADER --- */
+header {
+  background: linear-gradient(to right, var(--gray-900), var(--gray-800));
+  color: white;
+  padding: 1.5rem 0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+
+.header-content {
+  max-width: 1200px; margin: 0 auto; padding: 0 1rem;
+  display: flex; align-items: center; gap: 1rem;
+}
+
+.icon-circle {
+  background: rgba(255, 255, 255, 0.2); padding: 0.75rem; border-radius: 50%;
+}
+
+.header-title h1 { margin: 0; font-size: 1.875rem; font-weight: 700; }
+.header-title p { margin: 0; color: var(--gray-300); font-size: 0.875rem; }
+
+/* --- MAIN CONTAINER --- */
+.main-container { max-width: 1000px; margin: 3rem auto; padding: 0 1rem; }
+
+/* --- SEARCH BOX --- */
+.search-card {
+  background: white; border-radius: 0.5rem; padding: 2rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+  border: 2px solid var(--gray-200); max-width: 40rem; margin: 0 auto;
+}
+
+.input-group { position: relative; margin-bottom: 1rem; }
+.input-icon { position: absolute; left: 1rem; top: 50%; transform: translateY(-50%); color: var(--gray-400); }
+
+.search-input {
+  width: 100%; padding: 1rem 1rem 1rem 3rem;
+  border: 2px solid var(--gray-300); border-radius: 0.5rem;
+  font-size: 1rem; outline: none; box-sizing: border-box;
+}
+.search-input:focus { border-color: var(--gray-900); }
+
+.search-btn {
+  width: 100%; background: linear-gradient(to right, var(--gray-900), var(--gray-700));
+  color: white; padding: 1rem; border-radius: 0.5rem; border: none;
+  font-weight: 600; cursor: pointer; display: flex; justify-content: center; align-items: center; gap: 0.5rem;
+  transition: all 0.2s;
+}
+.search-btn:hover { opacity: 0.9; transform: translateY(-1px); }
+
+/* --- RESULT CARD --- */
+.result-card {
+  background: white; border-radius: 0.5rem; overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border: 1px solid var(--gray-200);
+  animation: fadeIn 0.5s ease-out;
+}
+
+.student-header {
+  background: linear-gradient(to right, var(--gray-900), var(--gray-700));
+  color: white; padding: 2rem;
+  display: flex; justify-content: space-between; align-items: center;
+}
+
+.summary-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; padding: 1.5rem;
+  background: var(--gray-50);
+}
+
+.stat-box {
+  background: white; padding: 1rem; text-align: center;
+  border-radius: 0.5rem; border: 1px solid var(--gray-200); box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+}
+
+.subjects-section { padding: 1.5rem; }
+.subject-row {
+  background: var(--gray-50); border: 1px solid var(--gray-200);
+  padding: 1rem; border-radius: 0.5rem; margin-bottom: 1rem;
+}
+
+.marks-grid {
+  display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; margin-top: 1rem; text-align: center;
+}
+.mark-cell { background: white; padding: 0.75rem; border-radius: 0.25rem; border: 1px solid var(--gray-200); }
+.mark-cell.dark { background: var(--gray-900); color: white; border: none; }
+
+.grade-badge {
+  padding: 0.25rem 1rem; border-radius: 9999px; font-weight: 700; font-size: 0.875rem; color: white;
+}
+
+/* --- UTILS --- */
+.text-xs { font-size: 0.75rem; }
+.font-bold { font-weight: 700; }
+.text-gray { color: var(--gray-600); }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+
+/* ADMIN OVERLAY */
+.admin-btn { display: block; margin: 20px auto; color: #666; background: none; border: none; cursor: pointer; text-decoration: underline; }
+.admin-modal { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: white; padding: 2rem; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.5); border-radius: 1rem; width: 90%; max-width: 500px; z-index: 100; }
+.overlay { position: fixed; top: 0; left: 0; right: 0; bottom: 0; background: rgba(0,0,0,0.5); z-index: 50; }

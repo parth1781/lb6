@@ -1,0 +1,20 @@
+# Ignore React Heavy Files
+node_modules/
+build/
+.env
+
+# Ignore Java Build Files
+target/
+*.class
+.mvn/
+mvnw
+mvnw.cmd
+
+# Ignore IDE Settings
+.vscode/
+.idea/
+*.iml
+
+# Ignore System Files
+.DS_Store
+Thumbs.db
